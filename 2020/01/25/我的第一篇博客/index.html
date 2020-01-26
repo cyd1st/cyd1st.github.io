@@ -326,30 +326,21 @@
   
 
   
-  
-  
-     <div id="gitalk-container"></div>
-     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
- <script type="text/javascript">
-      var gitalk = new Gitalk({
-        clientID: 'd866e388a849fcd4cb60',
-        clientSecret: '59689fbeae4d1a4ab8763632cac3e1d43a53280a',
-        repo: 'HexoBlogTalk',
-        owner: 'BOT-Vitaliy',
-        admin: [&#39;BOT-Vitaliy&#39;],
-        id: location.pathname,
-        labels: [&#39;Gitalk&#39;],
-        perPage: 15,
-        pagerDirection: 'last',
-        createIssueManually: true,
-        distractionFreeMode: false
-      })
-
-      gitalk.render('gitalk-container')
-     </script>
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://oomf.top/2020/01/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/",
+  owner: 'BOT-Vitaliy',
+  repo: 'HexoBlogTalk',
+  oauth: {
+    client_id: 'd866e388a849fcd4cb60',
+    client_secret: '59689fbeae4d1a4ab8763632cac3e1d43a53280a',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
