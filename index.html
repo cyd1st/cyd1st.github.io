@@ -187,26 +187,8 @@
 <h2 id="Gitment"><a href="#Gitment" class="headerlink" title="Gitment"></a>Gitment</h2><p>这是浪费我最多时间的地方，不懂js，css，只得遍寻网络。我使用的主题是yilia,已经常年不更新了。</p>
 <figure class="highlight"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#5、Gitment</span><br><span class="line">gitment_owner: xxx            #你的 GitHub ID</span><br><span class="line">gitment_repo: 'xxxx'          #存储评论的 repo</span><br><span class="line">gitment_oauth:</span><br><span class="line">  client_id: 'xxxx'           #client ID</span><br><span class="line">  client_secret: 'xxxx'       #client secret</span><br></pre></td></tr></table></figure>
 <p>这是最初的配置指令。我按照要求填写，却出现了Error</p>
-<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><img src="/2020/01/26/Hexo-Notice/mistake1.png" class="" title="错误为：Error: Comments Not Initialized">
-
-<h3 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h3><ol>
-<li>最开始找到的方法是：检查Github Oauth App 各种配置填写正确，特别是<code>Authorization callback URL</code>。<br>但我反复检查，依旧没有变化。点击Login,无限<code>Loading comments</code>，浏览器还弹出一个提示框，依旧无法使用。<img src="/2020/01/26/Hexo-Notice/mistake2.png" class="" title="无限Loading"></li>
-<li>然后，在GitHub找到另一个解决方案：原因是一级域名和二级域名(比如www)解析在<code>Authorization callback URL</code>处引起混乱。去掉二级域名或者nginx重定向。但对我的问题依旧于事无补。</li>
-<li>后来，我在一个教程里看到了汉化步骤，我就修改了<code>/themes/yilia/layout/_partial/post</code>里<code>gitment.ejs</code>的下面两行<figure class="highlight js"><figcaption><span>[原]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"//imsun.github.io/gitment/style/default.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"//imsun.github.io/gitment/dist/gitment.browser.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-修改为<figure class="highlight js"><figcaption><span>[新]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://billts.site/extra_css/gitment.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://billts.site/js/gitment.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>此时再点击<code>登录</code>,就会出现一个按钮。</p>
-<img src="/2020/01/26/Hexo-Notice/mistake3.png" class="" title="初始化按钮">
-<p>如果点击后依然出现错误<code>Error: Validation Failed</code>，那是因为issue的label有长度限制，最大长度为50个字符。而github issue是基于网页标题来建立的，每个issue有两个label（标签），gitment和网页ID。默认的网页ID是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id: &quot;&lt;%&#x3D;url%&gt;&quot;,</span><br></pre></td></tr></table></figure>
-<p>可以修改为</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id: <span class="string">'&lt;%= page.date %&gt;'</span>    <span class="comment">/*页面ID为文章日期*/</span></span><br><span class="line">或者</span><br><span class="line">id: <span class="string">'&lt;%= page.title %&gt;'</span>   <span class="comment">/*页面ID为文章标题*/</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>新建文章时建议用英文，可以减少字符数，同时避免一些未知错误<br>另外建议页面ID设置为文章日期，避免字符数依旧超过，同时换了文章标题或路径也不会重新新建issue。  </p>
-</blockquote>
-
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3>
+        
       
 
       
@@ -214,8 +196,34 @@
     <div class="article-info article-info-index">
       
       
-      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/26/Hexo-Notice/">展开全文 >></a>
+        </p>
       
 
       
@@ -268,8 +276,6 @@
 <h2 id="文章资源文件夹"><a href="#文章资源文件夹" class="headerlink" title="文章资源文件夹"></a>文章资源文件夹</h2><p>对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将 config.yml 文件中的<code>post_asset_folder</code>选项设为 true 来打开。</p>
 <figure class="highlight plain"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2020/01/26/Hexo-Asset-Folders/#more">展开全文 >></a>
-        
       
 
       
@@ -305,6 +311,10 @@
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/26/Hexo-Asset-Folders/">展开全文 >></a>
+        </p>
       
 
       
@@ -378,6 +388,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/25/first-blog/">展开全文 >></a>
+        </p>
       
 
       
@@ -475,6 +489,10 @@
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2013/07/14/hello-world/">展开全文 >></a>
+        </p>
       
 
       
