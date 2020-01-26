@@ -332,6 +332,31 @@
   
 
   
+  
+  
+     <div id="gitalk-container"></div>
+     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+ <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'd866e388a849fcd4cb60',
+        clientSecret: '59689fbeae4d1a4ab8763632cac3e1d43a53280a',
+        repo: 'https://github.com/BOT-Vitaliy/HexoBlogTalk.git',
+        owner: 'BOT-Vitaliy',
+        admin: [&#39;BOT-Vitaliy&#39;],
+        id: location.pathname,
+        labels: [&#39;Gitalk&#39;],
+        perPage: 15,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: false
+      })
+
+      gitalk.render('gitalk-container')
+     </script>
+
 
 
           </div>
