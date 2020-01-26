@@ -16,6 +16,8 @@
 <meta property="og:description" content="安装过程出现了一些问题，网上答案混杂，需要花费大量时间寻找解决方案，故记录一些坑。 Gitment这是浪费我最多时间的地方，不懂js，css，只得遍寻网络。我使用的主题是yilia,已经常年不更新了。 _config.yml123456#5、Gitmentgitment_owner: xxx            #你的 GitHub IDgitment_repo: &#39;xxxx&#39;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://oomf.top/2020/01/26/Hexo-Notice/mistake1.png">
+<meta property="og:image" content="http://oomf.top/2020/01/26/Hexo-Notice/mistake2.png">
+<meta property="og:image" content="http://oomf.top/2020/01/26/Hexo-Notice/mistake3.png">
 <meta property="article:published_time" content="2020-01-26T09:43:42.000Z">
 <meta property="article:modified_time" content="2020-01-26T09:43:42.000Z">
 <meta property="article:author" content="cyD">
@@ -192,8 +194,22 @@
 <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><img src="/2020/01/26/Hexo-Notice/mistake1.png" class="" title="错误为：Error: Comments Not Initialized">
 
 <h3 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h3><ol>
-<li>最开始找到的方法是：检查Github Oauth App 各种配置填写正确，特别是<code>Authorization callback URL</code>。<br>但我反复检查，依旧没有变化。点击Login,</li>
+<li>最开始找到的方法是：检查Github Oauth App 各种配置填写正确，特别是<code>Authorization callback URL</code>。<br>但我反复检查，依旧没有变化。点击Login,无限<code>Loading comments</code>，浏览器还弹出一个提示框，依旧无法使用。<img src="/2020/01/26/Hexo-Notice/mistake2.png" class="" title="无限Loading"></li>
+<li>然后，在GitHub找到另一个解决方案：原因是一级域名和二级域名(比如www)解析在<code>Authorization callback URL</code>处引起混乱。去掉二级域名或者nginx重定向。但对我的问题依旧于事无补。</li>
+<li>后来，我在一个教程里看到了汉化步骤，我就修改了<code>/themes/yilia/layout/_partial/post</code>里<code>gitment.ejs</code>的下面两行<figure class="highlight js"><figcaption><span>[原]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"//imsun.github.io/gitment/style/default.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"//imsun.github.io/gitment/dist/gitment.browser.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+修改为<figure class="highlight js"><figcaption><span>[新]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://billts.site/extra_css/gitment.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://billts.site/js/gitment.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
+<p>此时再点击<code>登录</code>,就会出现一个按钮。</p>
+<img src="/2020/01/26/Hexo-Notice/mistake3.png" class="" title="初始化按钮">
+<p>如果点击后依然出现错误<code>Error: Validation Failed</code>，那是因为issue的label有长度限制，最大长度为50个字符。而github issue是基于网页标题来建立的，每个issue有两个label（标签），gitment和网页ID。默认的网页ID是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id: &quot;&lt;%&#x3D;url%&gt;&quot;,</span><br></pre></td></tr></table></figure>
+<p>可以修改为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id: <span class="string">'&lt;%= page.date %&gt;'</span>    <span class="comment">/*页面ID为文章日期*/</span></span><br><span class="line">或者</span><br><span class="line">id: <span class="string">'&lt;%= page.title %&gt;'</span>   <span class="comment">/*页面ID为文章标题*/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>新建文章时建议用英文，可以减少字符数，同时避免一些未知错误<br>另外建议页面ID设置为文章日期，避免字符数依旧超过，同时换了文章标题或路径也不会重新新建issue。  </p>
+</blockquote>
 
       
 
@@ -316,11 +332,11 @@
 
   
   <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://oomf.top/2020/01/26/Hexo-Notice/",
+  id: 'Sun Jan 26 2020 17:43:42 GMT+0800',
   owner: 'cyd1st',
   repo: 'HexoBlogTalk',
   oauth: {
