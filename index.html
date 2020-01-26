@@ -170,7 +170,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/26/Hexo-Notice/">Hexo-Notice</a>
+      <a class="article-title" href="/2020/01/26/Hexo-Notice/">Hexo 踩坑指南</a>
     </h1>
   
 
@@ -183,7 +183,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>安装过程出现了一些问题，网上答案混杂，需要花费大量时间寻找解决方案，故记录一些坑。</p>
+<h2 id="Gitment"><a href="#Gitment" class="headerlink" title="Gitment"></a>Gitment</h2><p>这是浪费我最多时间的地方，不懂js，css，只得遍寻网络。我使用的主题是yilia,已经常年不更新了。</p>
+<figure class="highlight"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#5、Gitment</span><br><span class="line">gitment_owner: xxx            #你的 GitHub ID</span><br><span class="line">gitment_repo: 'xxxx'          #存储评论的 repo</span><br><span class="line">gitment_oauth:</span><br><span class="line">  client_id: 'xxxx'           #client ID</span><br><span class="line">  client_secret: 'xxxx'       #client secret</span><br></pre></td></tr></table></figure>
+<p>这是最初的配置指令。我按照要求填写，却出现了Error</p>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><img src="/2020/01/26/Hexo-Notice/mistake1.png" class="" title="错误为：Error: Comments Not Initialized">
+
+<h3 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h3><ol>
+<li>最开始找到的方法是：检查Github Oauth App 各种配置填写正确，特别是<code>Authorization callback URL</code>。<br>但我反复检查，依旧没有变化。点击Login,</li>
+</ol>
+
       
 
       
