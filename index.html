@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <title>我的博客 | 测试ing...</title>
 
@@ -32,7 +32,7 @@
   <link href="/favicon.ico" rel="icon">
   <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
     <!-- mathjax config similar to math.stackexchange -->
@@ -65,11 +65,12 @@
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script> 
+
  
 
 
 <body>
-<div class="blog">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
   <div class="content">
 
     <header>
@@ -100,15 +101,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/01/29/mathJax-test/"><span>mathJax语法支持测试</span></a></h3>
+    <h3 class="article-title"><a href="/2020/01/30/themehacker-hexo-mathjax/"><span>主题hacker添加mathjax支持</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/01/29/mathJax-test/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-01-29T15:29:48.000Z">
-          2020-01-29
+      <a href="/2020/01/30/themehacker-hexo-mathjax/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-29T18:00:51.000Z">
+          2020-01-30
         </time>
       </a>
     </span>
@@ -120,14 +121,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <figure class="highlight plain"><figcaption><span>laTex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\lim_&#123;n \to \infty&#125; \sum_&#123;k&#x3D;1&#125;^n \frac&#123;1&#125;&#123;k^2&#125; &#x3D; \frac&#123;\pi^2&#125;&#123;6&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2}= \frac{\pi^2}{6}<br>$$<br>mathJax部分兼容laTex。<br><code>$$</code>表示另起一行且居中。而<code>$</code>则表示嵌入在行内。如 $\lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6} $</p>
-<figure class="highlight plain"><figcaption><span>laTex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\forall x \in \mathbf&#123;R&#125;: \qquad x^&#123;2&#125; \geq 0</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$\forall x \in \mathbf{R}: \qquad x^{2} \geq 0$$<br>所有的<strong>空格</strong>或是由数学表达式逻辑的衍生，或是由特殊的命令如<br><code>\qquad</code> $\quad \ \ \ $  $A\qquad B$<br><code>\quad</code>  $\qquad$   $A\quad B$<br><code>\</code>     $\qquad \quad \ \ $      $A\ B$<br><code>空格</code>   $\qquad$     $A B$<br>来得到。</p>
-<p>数学家们通常对使用什么样的符号非常挑剔：习惯上使用“空心粗体”（blackboard bold）来表示实数集合。这种字体可用 amsfonts 或amssymb 宏包中的命令 <code>\mathbb</code> 来得到。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$x^&#123;2&#125; \geq 0\qquad \textrm&#123;for all &#125;x\in\mathbf&#123;R&#125;$$</span><br><span class="line">$$x^&#123;2&#125; \geq 0\qquad \textrm&#123;for all &#125;x\in\mathbb&#123;R&#125;$$</span><br></pre></td></tr></table></figure>
-<p>$$x^{2} \geq 0 \qquad \textrm{for all }x\in\mathbf{R} $$<br>$$x^{2} \geq 0 \qquad \textrm{for all }x\in\mathbb{R}$$</p>
-<h3 id="加减乘除等"><a href="#加减乘除等" class="headerlink" title="加减乘除等"></a>加减乘除等</h3><p>$$<br>a+b \quad a-b\quad a \div b \quad a \times b<br>$$</p>
+        <p><a href="https://github.com/CodeDaraW/Hacker/pull/30/commits/48f96e4bdd466336d715fcaefacf2c2d08534b8e" target="_blank" rel="noopener">链接</a></p>
 
       
     </div>
@@ -152,6 +146,152 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/测试/">测试</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/01/30/themehacker-hexo-mathjax/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/01/30/hexo-renderer-markdown-it/"><span>hexo官方插件-hexo renderer markdown it</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/30/hexo-renderer-markdown-it/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-29T17:20:59.000Z">
+          2020-01-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="安装">安装</h2>
+<p><strong>警告：</strong> 首先确保你在hexo博客主目录下<br>
+先卸载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm un hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
+<p>卸载完后，还有其他你添加的又可能冲突的插件。再安装<code>hexo-renderer-markdown-it</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i hexo-renderer-markdown-it --save</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/hexo/">hexo</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/测试/">测试</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/01/30/hexo-renderer-markdown-it/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/01/29/mathJax-test/"><span>mathJax语法支持测试</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/29/mathJax-test/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-29T15:29:48.000Z">
+          2020-01-29
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight plain"><figcaption><span>laTex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\lim_&#123;n \to \infty&#125; \sum_&#123;k&#x3D;1&#125;^n \frac&#123;1&#125;&#123;k^2&#125; &#x3D; \frac&#123;\pi^2&#125;&#123;6&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>
+\lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2}= \frac{\pi^2}{6}<br>
+$$<br>
+mathJax部分兼容laTex。</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/hexo/">hexo</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/测试/">测试</a><a href="/tags/mathjax/">mathjax</a>
     </span>
     
 
@@ -197,10 +337,11 @@
     <div class="entry">
       
         <p>安装过程出现了一些问题，网上答案混杂，需要花费大量时间寻找解决方案，故记录一些坑，有缘人看到也能少走一些弯路。</p>
-<h2 id="Gitment"><a href="#Gitment" class="headerlink" title="Gitment"></a>Gitment</h2><p>这是浪费我最多时间的地方，不懂js，css，只得遍寻网络。我使用的主题是yilia,已经常年不更新了。</p>
+<h2 id="Gitment">Gitment</h2>
+<p>这是浪费我最多时间的地方，不懂js，css，只得遍寻网络。我使用的主题是yilia,已经常年不更新了。</p>
 <figure class="highlight"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#5、Gitment</span><br><span class="line">gitment_owner: xxx            #你的 GitHub ID</span><br><span class="line">gitment_repo: 'xxxx'          #存储评论的 repo</span><br><span class="line">gitment_oauth:</span><br><span class="line">  client_id: 'xxxx'           #client ID</span><br><span class="line">  client_secret: 'xxxx'       #client secret</span><br></pre></td></tr></table></figure>
 <p>这是最初的配置指令。我按照要求填写，却出现了Error</p>
-<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3>
+<h3 id="遇到的问题">遇到的问题</h3>
         
       
     </div>
@@ -269,8 +410,10 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>资源（Assert）代表<code>source</code>文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件等。 比方说，如果你的<br>Hexo项目中只有少量图片，那最简单的方法就是将它们放在<code>source/images</code>文件夹中。然后通过类似于<code>![](/images/image.jpg)</code>的方法访问它们。   </p>
-<h2 id="文章资源文件夹"><a href="#文章资源文件夹" class="headerlink" title="文章资源文件夹"></a>文章资源文件夹</h2><p>对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将 config.yml 文件中的<code>post_asset_folder</code>选项设为 true 来打开。</p>
+        <p>资源（Assert）代表<code>source</code>文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件等。 比方说，如果你的<br>
+Hexo项目中只有少量图片，那最简单的方法就是将它们放在<code>source/images</code>文件夹中。然后通过类似于<code>![](/images/image.jpg)</code>的方法访问它们。</p>
+<h2 id="文章资源文件夹">文章资源文件夹</h2>
+<p>对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将 config.yml 文件中的<code>post_asset_folder</code>选项设为 true 来打开。</p>
 <figure class="highlight plain"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
         
       
@@ -295,7 +438,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/笔记/">笔记</a><a href="/tags/测试/">测试</a>
+        <a href="/tags/测试/">测试</a><a href="/tags/笔记/">笔记</a>
     </span>
     
 
@@ -340,7 +483,8 @@
   <div class="article-content">
     <div class="entry">
       
-        <h2 id="导言"><a href="#导言" class="headerlink" title="导言"></a>导言</h2><p>极化码是一种…</p>
+        <h2 id="导言">导言</h2>
+<p>极化码是一种…</p>
         
       
     </div>
@@ -403,7 +547,7 @@
     <div class="entry">
       
         <p>欢迎使用 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2>
+<h2 id="快速开始">快速开始</h2>
         
       
     </div>
@@ -467,6 +611,6 @@
 </footer>
     
   </div>
-</div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

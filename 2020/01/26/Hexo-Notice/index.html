@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <title>Hexo 踩坑指南 | 我的博客 | 测试ing...</title>
 
@@ -32,7 +32,7 @@
   <link href="/favicon.ico" rel="icon">
   <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
     <!-- mathjax config similar to math.stackexchange -->
@@ -65,11 +65,12 @@
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script> 
+
  
 
 
 <body>
-<div class="blog">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
   <div class="content">
 
     <header>
@@ -120,20 +121,26 @@
     <div class="entry">
       
         <p>安装过程出现了一些问题，网上答案混杂，需要花费大量时间寻找解决方案，故记录一些坑，有缘人看到也能少走一些弯路。</p>
-<h2 id="Gitment"><a href="#Gitment" class="headerlink" title="Gitment"></a>Gitment</h2><p>这是浪费我最多时间的地方，不懂js，css，只得遍寻网络。我使用的主题是yilia,已经常年不更新了。</p>
+<h2 id="Gitment">Gitment</h2>
+<p>这是浪费我最多时间的地方，不懂js，css，只得遍寻网络。我使用的主题是yilia,已经常年不更新了。</p>
 <figure class="highlight"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#5、Gitment</span><br><span class="line">gitment_owner: xxx            #你的 GitHub ID</span><br><span class="line">gitment_repo: 'xxxx'          #存储评论的 repo</span><br><span class="line">gitment_oauth:</span><br><span class="line">  client_id: 'xxxx'           #client ID</span><br><span class="line">  client_secret: 'xxxx'       #client secret</span><br></pre></td></tr></table></figure>
 <p>这是最初的配置指令。我按照要求填写，却出现了Error</p>
-<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><a id="more"></a>
+<h3 id="遇到的问题">遇到的问题</h3>
+<a id="more"></a>
 <img src="/2020/01/26/Hexo-Notice/mistake1.png" class="" title="错误为：Error: Comments Not Initialized">
-
-<h3 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h3><ol>
-<li>最开始找到的方法是：检查Github Oauth App 各种配置填写正确，特别是<code>Authorization callback URL</code>。<br>但我反复检查，依旧没有变化。点击Login,无限<code>Loading comments</code>，浏览器还弹出一个提示框，依旧无法使用。<img src="/2020/01/26/Hexo-Notice/mistake2.png" class="" title="无限Loading"></li>
-<li>然后，在GitHub找到另一个解决方案：原因是一级域名和二级域名(比如www)解析在<code>Authorization callback URL</code>处引起混乱。去掉二级域名或者nginx重定向。但对我的问题依旧于事无补。</li>
-<li>后来，我在一个教程里看到了汉化步骤，我就修改了<code>/themes/yilia/layout/_partial/post</code>里<code>gitment.ejs</code>的下面两行<figure class="highlight js"><figcaption><span>[原]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"//imsun.github.io/gitment/style/default.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"//imsun.github.io/gitment/dist/gitment.browser.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-修改为<figure class="highlight js"><figcaption><span>[新]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://billts.site/extra_css/gitment.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://billts.site/js/gitment.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<h3 id="如何解决">如何解决</h3>
+<ol>
+<li>最开始找到的方法是：检查Github Oauth App 各种配置填写正确，特别是<code>Authorization callback URL</code>。<br>
+但我反复检查，依旧没有变化。点击Login,无限<code>Loading comments</code>，浏览器还弹出一个提示框，依旧无法使用。</li>
 </ol>
+<img src="/2020/01/26/Hexo-Notice/mistake2.png" class="" title="无限Loading">
+<ol start="2">
+<li>然后，在GitHub找到另一个解决方案：原因是一级域名和二级域名(比如www)解析在<code>Authorization callback URL</code>处引起混乱。去掉二级域名或者nginx重定向。但对我的问题依旧于事无补。</li>
+<li>后来，我在一个教程里看到了汉化步骤，我就修改了<code>/themes/yilia/layout/_partial/post</code>里<code>gitment.ejs</code>的下面两行</li>
+</ol>
+<figure class="highlight js"><figcaption><span>[原]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"//imsun.github.io/gitment/style/default.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"//imsun.github.io/gitment/dist/gitment.browser.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight js"><figcaption><span>[新]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://billts.site/extra_css/gitment.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://billts.site/js/gitment.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p>此时再点击<code>登录</code>,就会出现一个按钮。</p>
 <img src="/2020/01/26/Hexo-Notice/mistake3.png" class="" title="初始化按钮">
 <p>如果点击后依然出现错误<code>Error: Validation Failed</code>，那是因为issue的label有长度限制，最大长度为50个字符。而github issue是基于网页标题来建立的，每个issue有两个label（标签），gitment和网页ID。默认的网页ID是</p>
@@ -141,7 +148,8 @@
 <p>可以修改为</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id: <span class="string">'&lt;%= page.date %&gt;'</span>    <span class="comment">/*页面ID为文章日期*/</span></span><br><span class="line">或者</span><br><span class="line">id: <span class="string">'&lt;%= page.title %&gt;'</span>   <span class="comment">/*页面ID为文章标题*/</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>新建文章时建议用英文，可以减少字符数，同时避免一些未知错误<br>另外建议页面ID设置为文章日期，避免字符数依旧超过，同时换了文章标题或路径也不会重新新建issue。  </p>
+<p>新建文章时建议用英文，可以减少字符数，同时避免一些未知错误<br>
+另外建议页面ID设置为文章日期，避免字符数依旧超过，同时换了文章标题或路径也不会重新新建issue。</p>
 </blockquote>
 
       
@@ -214,6 +222,6 @@
 </footer>
     
   </div>
-</div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
