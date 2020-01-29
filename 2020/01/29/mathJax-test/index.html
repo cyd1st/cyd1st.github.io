@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于我 | 我的博客 | 测试ing...</title>
+  <title>mathJax语法支持测试 | 我的博客 | 测试ing...</title>
 
   
   <meta name="author" content="cyD">
@@ -21,7 +21,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="关于我"/>
+  <meta property="og:title" content="mathJax语法支持测试"/>
 
   <meta property="og:site_name" content="我的博客"/>
 
@@ -99,15 +99,15 @@
 
   
     
-    <h3 class="article-title"><span>关于我</span></h3>
+    <h3 class="article-title"><span>mathJax语法支持测试</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/about/me.html" rel="bookmark">
-        <time class="entry-date published" datetime="2020-01-25T20:01:34.000Z">
-          2020-01-26
+      <a href="/2020/01/29/mathJax-test/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-29T15:29:48.000Z">
+          2020-01-29
         </time>
       </a>
     </span>
@@ -119,7 +119,15 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="只是一个测试页面"><a href="#只是一个测试页面" class="headerlink" title="只是一个测试页面"></a>只是一个测试页面</h1>
+        <figure class="highlight plain"><figcaption><span>laTex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\lim_&#123;n \to \infty&#125; \sum_&#123;k&#x3D;1&#125;^n \frac&#123;1&#125;&#123;k^2&#125; &#x3D; \frac&#123;\pi^2&#125;&#123;6&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>\lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2}= \frac{\pi^2}{6}<br>$$<br>mathJax部分兼容laTex。<br><code>$$</code>表示另起一行且居中。而<code>$</code>则表示嵌入在行内。如 $\lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6} $</p>
+<figure class="highlight plain"><figcaption><span>laTex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\forall x \in \mathbf&#123;R&#125;: \qquad x^&#123;2&#125; \geq 0</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$\forall x \in \mathbf{R}: \qquad x^{2} \geq 0$$<br>所有的<strong>空格</strong>或是由数学表达式逻辑的衍生，或是由特殊的命令如<br><code>\qquad</code> $\quad \ \ \ $  $A\qquad B$<br><code>\quad</code>  $\qquad$   $A\quad B$<br><code>\</code>     $\qquad \quad \ \ $      $A\ B$<br><code>空格</code>   $\qquad$     $A B$<br>来得到。</p>
+<p>数学家们通常对使用什么样的符号非常挑剔：习惯上使用“空心粗体”（blackboard bold）来表示实数集合。这种字体可用 amsfonts 或amssymb 宏包中的命令 <code>\mathbb</code> 来得到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$x^&#123;2&#125; \geq 0\qquad \textrm&#123;for all &#125;x\in\mathbf&#123;R&#125;$$</span><br><span class="line">$$x^&#123;2&#125; \geq 0\qquad \textrm&#123;for all &#125;x\in\mathbb&#123;R&#125;$$</span><br></pre></td></tr></table></figure>
+<p>$$x^{2} \geq 0 \qquad \textrm{for all }x\in\mathbf{R} $$<br>$$x^{2} \geq 0 \qquad \textrm{for all }x\in\mathbb{R}$$</p>
+<h3 id="加减乘除等"><a href="#加减乘除等" class="headerlink" title="加减乘除等"></a>加减乘除等</h3><p>$$<br>a+b \quad a-b\quad a \div b \quad a \times b<br>$$</p>
+
       
     </div>
 
@@ -129,7 +137,21 @@
     <div class="article-meta pull-left">
 
     
+      
 
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/hexo/">hexo</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/测试/">测试</a>
+    </span>
     
 
     </div>
