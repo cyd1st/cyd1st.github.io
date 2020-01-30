@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>Hacker主题-图片居中设置 | 我的博客 | 测试ing...</title>
+
+  
+  <meta name="author" content="cyD">
+  
+
+  
+  <meta name="description" content="blog">
+  
+
+  
+  <meta name="keywords" content="blog,tech,engineering">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Hacker主题-图片居中设置"/>
+
+  <meta property="og:site_name" content="我的博客"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+
+ 
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">我的博客</a>
+    </h1>
+    <p class="site-description">测试ing...</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Hacker主题-图片居中设置</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/30/themehacker-imgcenter/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-30T07:30:16.000Z">
+          2020-01-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Hacker主题是默认图片居中的，但是很多情况下会导致文章太过松散，以及排版上不美观。<br>
+比如，如果默认居中</p>
+<div align=center> <img src="/2020/01/30/themehacker-imgcenter/pic_1.png" class="" width="200" height="200"> </div>
+显然不太美观，正常应该是
+<img src="/2020/01/30/themehacker-imgcenter/pic_2.png" class="" width="600">
+<p>目前本人技术所限，无法做到随用随启，只能整个主题开关。<br>
+修改主题目录下文件<code>source/css/components/article.styl</code>，在<code>77-81</code>行添加注释。</p>
+<figure class="highlight css"><figcaption><span>article.styl</span></figcaption><table><tr><td class="gutter"><pre><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">color $articleTextColor</span><br><span class="line"></span><br><span class="line marked"><span class="comment">/*     img</span></span><br><span class="line marked"><span class="comment">      display block</span></span><br><span class="line marked"><span class="comment">      max-width: 100%</span></span><br><span class="line marked"><span class="comment">      height auto</span></span><br><span class="line marked"><span class="comment">      margin 1rem auto</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p>这样修改完成，刷新网页即可生效。修改完后就可以多张图片并排。当然排版就复杂了。</p>
+<h5 id="常用命令">常用命令</h5>
+<figure class="highlight"><figcaption><span>默认靠左</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div align=center&gt; markdown或者hexo的语法 &lt;/div&gt;    # 图片居中</span><br><span class="line">&lt;div align=right&gt; markdown或者hexo的语法 &lt;/div&gt;     # 图片置右</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/hacker主题/">hacker主题</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+	<section id="comment" class="comment">
+		<div id="gitment"></div>
+	</section>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'cyd1st',
+			repo: 'HexoBlogTalk',
+			oauth: {
+				client_id: 'd866e388a849fcd4cb60',
+				client_secret: '59689fbeae4d1a4ab8763632cac3e1d43a53280a',
+			},
+		})
+		gitment.render('gitment')
+	</script>
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 cyD
+    
+  </p>
+</footer>
+    
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
