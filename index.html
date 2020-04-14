@@ -346,7 +346,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <figure class="highlight plain"><figcaption><span>laTex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\lim_&#123;n \to \infty&#125; \sum_&#123;k&#x3D;1&#125;^n \frac&#123;1&#125;&#123;k^2&#125; &#x3D; \frac&#123;\pi^2&#125;&#123;6&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+        <figure class="highlight tex"><figcaption><span>laTex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">lim</span></span>_&#123;n <span class="tag">\<span class="name">to</span></span> <span class="tag">\<span class="name">infty</span></span>&#125; <span class="tag">\<span class="name">sum</span></span>_&#123;k=1&#125;^n <span class="tag">\<span class="name">frac</span><span class="string">&#123;1&#125;</span><span class="string">&#123;k^2&#125;</span> = </span><span class="tag">\<span class="name">frac</span><span class="string">&#123;\pi^2&#125;</span><span class="string">&#123;6&#125;</span></span></span></span><br><span class="line"><span class="formula">$$</span></span><br></pre></td></tr></table></figure>
 <p>$$<br>
 \lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2}= \frac{\pi^2}{6}<br>
 $$<br>
@@ -497,7 +497,7 @@ mathJax部分兼容laTex。</p>
 Hexo项目中只有少量图片，那最简单的方法就是将它们放在<code>source/images</code>文件夹中。然后通过类似于<code>![](/images/image.jpg)</code>的方法访问它们。</p>
 <h2 id="文章资源文件夹">文章资源文件夹</h2>
 <p>对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将 config.yml 文件中的<code>post_asset_folder</code>选项设为 true 来打开。</p>
-<figure class="highlight plain"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
         
       
     </div>
