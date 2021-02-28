@@ -1,2 +1,5 @@
 # my blog
-[chenyude.com]
+[chenyude.com](chenyude.com)
+
+
+
