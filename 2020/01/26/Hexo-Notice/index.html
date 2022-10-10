@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>Hexo 踩坑指南 | 我的博客 | 测试ing...</title>
+
+  
+  <meta name="author" content="cyD">
+  
+
+  
+  <meta name="description" content="blog">
+  
+
+  
+  <meta name="keywords" content="blog,tech,engineering">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Hexo 踩坑指南"/>
+
+  <meta property="og:site_name" content="我的博客"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+
+ 
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">我的博客</a>
+    </h1>
+    <p class="site-description">测试ing...</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Hexo 踩坑指南</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/26/Hexo-Notice/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-26T09:43:42.000Z">
+          2020-01-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>安装过程出现了一些问题，网上答案混杂，需要花费大量时间寻找解决方案，故记录一些坑，有缘人看到也能少走一些弯路。</p>
+<h2 id="Gitment">Gitment</h2>
+<p>这是浪费我最多时间的地方，不懂js，css，只得遍寻网络。我使用的主题是yilia,已经常年不更新了。</p>
+<figure class="highlight js"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#<span class="number">5</span>、<span class="title class_">Gitment</span></span><br><span class="line"><span class="attr">gitment_owner</span>: xxx            #你的 <span class="title class_">GitHub</span> <span class="variable constant_">ID</span></span><br><span class="line"><span class="attr">gitment_repo</span>: <span class="string">&#x27;xxxx&#x27;</span>          #存储评论的 repo</span><br><span class="line"><span class="attr">gitment_oauth</span>:</span><br><span class="line">  <span class="attr">client_id</span>: <span class="string">&#x27;xxxx&#x27;</span>           #client <span class="variable constant_">ID</span></span><br><span class="line">  <span class="attr">client_secret</span>: <span class="string">&#x27;xxxx&#x27;</span>       #client secret</span><br></pre></td></tr></table></figure>
+<p>这是最初的配置指令。我按照要求填写，却出现了Error</p>
+<h3 id="遇到的问题">遇到的问题</h3>
+<span id="more"></span>
+<img src="/2020/01/26/Hexo-Notice/mistake1.png" class="" title="错误为：Error: Comments Not Initialized">
+<h3 id="如何解决">如何解决</h3>
+<ol>
+<li>最开始找到的方法是：检查Github Oauth App 各种配置填写正确，特别是<code>Authorization callback URL</code>。<br>
+但我反复检查，依旧没有变化。点击Login,无限<code>Loading comments</code>，浏览器还弹出一个提示框，依旧无法使用。</li>
+</ol>
+<img src="/2020/01/26/Hexo-Notice/mistake2.png" class="" title="无限Loading">
+<ol start="2">
+<li>然后，在GitHub找到另一个解决方案：原因是一级域名和二级域名(比如www)解析在<code>Authorization callback URL</code>处引起混乱。去掉二级域名或者nginx重定向。但对我的问题依旧于事无补。</li>
+<li>后来，我在一个教程里看到了汉化步骤，我就修改了<code>/themes/yilia/layout/_partial/post</code>里<code>gitment.ejs</code>的下面两行</li>
+</ol>
+<figure class="highlight js"><figcaption><span>[原]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;//imsun.github.io/gitment/style/default.css&quot;</span>&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//imsun.github.io/gitment/dist/gitment.browser.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight js"><figcaption><span>[新]gitment.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://billts.site/extra_css/gitment.css&quot;</span>&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://billts.site/js/gitment.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>此时再点击<code>登录</code>,就会出现一个按钮。</p>
+<img src="/2020/01/26/Hexo-Notice/mistake3.png" class="" title="初始化按钮">
+<p>如果点击后依然出现错误<code>Error: Validation Failed</code>，那是因为issue的label有长度限制，最大长度为50个字符。而github issue是基于网页标题来建立的，每个issue有两个label（标签），gitment和网页ID。默认的网页ID是</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">id</span>: <span class="string">&quot;&lt;%=url%&gt;&quot;</span>,</span><br></pre></td></tr></table></figure>
+<p>可以修改为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">id</span>: <span class="string">&#x27;&lt;%= page.date %&gt;&#x27;</span>    <span class="comment">/*页面ID为文章日期*/</span></span><br><span class="line">或者</span><br><span class="line"><span class="attr">id</span>: <span class="string">&#x27;&lt;%= page.title %&gt;&#x27;</span>   <span class="comment">/*页面ID为文章标题*/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>新建文章时建议用英文，可以减少字符数，同时避免一些未知错误<br>
+另外建议页面ID设置为文章日期，避免字符数依旧超过，同时换了文章标题或路径也不会重新新建issue。</p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/hexo/">hexo</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/笔记/">笔记</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+	<section id="comment" class="comment">
+		<div id="gitment"></div>
+	</section>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'cyd1st',
+			repo: 'HexoBlogTalk',
+			oauth: {
+				client_id: 'd866e388a849fcd4cb60',
+				client_secret: '59689fbeae4d1a4ab8763632cac3e1d43a53280a',
+			},
+		})
+		gitment.render('gitment')
+	</script>
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a></br>
+	<a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022026651号-1</a>
+	
+    </br>
+    
+    &copy; 2022 cyD
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

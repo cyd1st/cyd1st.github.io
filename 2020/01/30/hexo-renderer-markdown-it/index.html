@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>hexo官方插件-hexo renderer markdown it | 我的博客 | 测试ing...</title>
+
+  
+  <meta name="author" content="cyD">
+  
+
+  
+  <meta name="description" content="blog">
+  
+
+  
+  <meta name="keywords" content="blog,tech,engineering">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="hexo官方插件-hexo renderer markdown it"/>
+
+  <meta property="og:site_name" content="我的博客"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+
+ 
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">我的博客</a>
+    </h1>
+    <p class="site-description">测试ing...</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>hexo官方插件-hexo renderer markdown it</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/30/hexo-renderer-markdown-it/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-29T17:20:59.000Z">
+          2020-01-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><a target="_blank" rel="noopener" href="https://travis-ci.org/hexojs/hexo-renderer-markdown-it"><img src="https://travis-ci.org/hexojs/hexo-renderer-markdown-it.svg?branch=master" alt="Build Status"></a>  <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-renderer-markdown-it"><img src="https://badge.fury.io/js/hexo-renderer-markdown-it.svg" alt="npm version"></a>  <a target="_blank" rel="noopener" href="https://david-dm.org/hexojs/hexo-renderer-markdown-it"><img src="https://david-dm.org/hexojs/hexo-renderer-markdown-it.svg" alt="npm dependencies"></a>  <a target="_blank" rel="noopener" href="https://coveralls.io/github/hexojs/hexo-renderer-markdown-it?branch=master"><img src="https://coveralls.io/repos/github/hexojs/hexo-renderer-markdown-it/badge.svg?branch=master" alt="Coverage Status"></a></p>
+<p>这个渲染插件使用 <a target="_blank" rel="noopener" href="https://github.com/markdown-it/markdown-it">Markdown-it</a> 作为 <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a> 的渲染引擎. 添加对 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a> 和 <a target="_blank" rel="noopener" href="http://commonmark.org/">CommonMark</a> 的支持。</p>
+<h2 id="主要特色">主要特色</h2>
+<ul>
+<li>支持 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>, <a target="_blank" rel="noopener" href="https://help.github.com/articles/github-flavored-markdown/">GFM</a> 和 <a target="_blank" rel="noopener" href="http://commonmark.org/">CommonMark</a></li>
+<li>广泛的配置</li>
+<li>比默认 <code>hexo-renderer-marked</code> 渲染器更快</li>
+<li>Safe ID for headings</li>
+<li>Anchors for headings with ID</li>
+<li>脚注</li>
+<li><code>&lt;sub&gt;</code> H<sub>2</sub>O</li>
+<li><code>&lt;sup&gt;</code> x<sup>2</sup></li>
+<li><code>&lt;ins&gt;</code> <ins>Inserted</ins></li>
+</ul>
+<span id="more"></span>
+<h2 id="安装">安装</h2>
+<p><strong>警告：</strong> 在开始下面的教程前，确保你在hexo博客主目录下。<br>
+Hexo默认使用<code>marked</code>渲染器插件作为markdown渲染器，所以安装<code>hexo-renderer-markdown-it</code>之前必须先卸载它。</p>
+<figure class="highlight bash"><figcaption><span>卸载marked</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm un hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
+<p>如果你已经卸载默认的markdown渲染器和其他你自己可能安装的markdown渲染器，就可以安全安装<code>hexo-renderer-markdiwn-it</code>了。</p>
+<figure class="highlight bash"><figcaption><span>安装markdown it</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i hexo-renderer-markdown-it --save</span><br></pre></td></tr></table></figure>
+<h2 id="选项">选项</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">permalinkClass:</span> <span class="string">&#x27;header-anchor&#x27;</span></span><br><span class="line">    <span class="attr">permalinkSide:</span> <span class="string">&#x27;left&#x27;</span></span><br><span class="line">    <span class="attr">permalinkSymbol:</span> <span class="string">&#x27;¶&#x27;</span></span><br><span class="line">    <span class="attr">case:</span> <span class="number">0</span></span><br><span class="line">    <span class="attr">separator:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="简单的配置">简单的配置</h3>
+<p>配置渲染器是一项相当简单的任务，因为所有设置都在hexo的_config.yml主文件中。您只需要在您喜欢的文本编辑器中将其打开并写下您的配置即可。<br>
+最简单的方法是使用<code>markdown-it</code>已经提供的默认值。但是首先，您必须选择要使用的设置。</p>
+<h4 id="预设">预设</h4>
+<hr>
+<h5 id="Zero">Zero</h5>
+<p><code>Zero</code>设置将禁用大多数解析器功能。仅在仅需要支持<em>斜体</em>和<strong>粗体</strong>显示时，才应使用此模式。渲染器甚至不支持所有原始的Markdown功能。<br>
+要启用<code>Zero</code>模式，您的_config.yml必须如下所示：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki/</span></span><br><span class="line"><span class="attr">markdown:</span> <span class="string">&#x27;zero&#x27;</span></span><br></pre></td></tr></table></figure>
+<h5 id="Default-GFM">Default(GFM)</h5>
+<p>使用<code>default</code>选项将使解析器的行为类似于github规范。<br>
+要启用此模式，您的<code>_config.yml</code>应该如下所示：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki/</span></span><br><span class="line"><span class="attr">markdown:</span> <span class="string">&#x27;default&#x27;</span></span><br></pre></td></tr></table></figure>
+<h5 id="CommonMark">CommonMark</h5>
+<p><code>CommonMark</code>为您提供了比“Zero”预设更多一点功能。此设置将强制插件使用最新的CommonMark规范。过去，我将其称为CommonMark严格模式，因为这是启用此预设时插件将执行的操作。它将为您提供CommonMark，仅此而已。<br>
+要启用此模式，您的<code>_config.yml</code>应该如下所示：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki/</span></span><br><span class="line"><span class="attr">markdown:</span> <span class="string">&#x27;commonmark&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><strong>警告：</strong> 选择任何这些预设将阻止您使用任何随附的插件。</p>
+<h3 id="进阶配置">进阶配置</h3>
+<p>使用<code>hexo-renderer-markdown-it</code>，您可以将非常特定的配置传递给Markdown-it解析器。</p>
+<h4 id="可用设置（解释）">可用设置（解释）</h4>
+<hr>
+<h5 id="html">html</h5>
+<p><code>html</code>设置定义文档中的HTML内容是否应转义或传递到最终结果。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">html:</span> <span class="literal">true</span> <span class="comment"># 不要转义HTML内容</span></span><br><span class="line">    <span class="comment">## 或者</span></span><br><span class="line"><span class="attr">html:</span> <span class="literal">false</span> <span class="comment"># 转义HTML内容，那么&lt;标签&gt;会显示为文本</span></span><br></pre></td></tr></table></figure>
+<h5 id="xhtmlOut">xhtmlOut</h5>
+<p><code>xhtmlOut</code>设置定义解析器是否将导出与XHTML完全兼容的标记。仅对完整的 <a target="_blank" rel="noopener" href="http://commonmark.org/">CommonMark</a> 支持才需要为<code>true</code>。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">xhtmlOut:</span> <span class="literal">true</span> <span class="comment"># Parser produces fully XHTML compliant code.</span></span><br><span class="line">               <span class="comment"># Ex: A line breaks will be &lt;br /&gt;</span></span><br><span class="line">    <span class="comment">## OR</span></span><br><span class="line"><span class="attr">xhtmlOut:</span> <span class="literal">false</span> <span class="comment"># Parser will not produce XHTML compliant code.</span></span><br><span class="line">                <span class="comment"># Ex: A line break will be &lt;br&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="breaks">breaks</h5>
+<p>使源文件中的换行符将被解析为<code>&lt;br&gt;</code>标记。因此，每次按<code>Enter</code>键都会创建一个换行符，这不是默认的Markdown，CommonMark或GFM行为。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">breaks:</span> <span class="literal">true</span> <span class="comment"># 每次源文件有换行，解析器都会产生 `&lt;br&gt;` 标签 </span></span><br><span class="line">    <span class="comment">## 或者</span></span><br><span class="line"><span class="attr">breaks:</span> <span class="literal">false</span> <span class="comment"># 解析器将会忽略源文件中的换行</span></span><br><span class="line">              <span class="comment">#默认两次换行创建段落依然生效</span></span><br></pre></td></tr></table></figure>
+<h5 id="linkify">linkify</h5>
+<p>解析器可以内联直接粘贴到文本中的链接。如果您写的一段文本看起来像一个链接，它将被渲染为<code>&lt;a src=&quot;http://example.com&quot;&gt;http://example.com&lt;/a&gt;</code> 。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">linkify:</span> <span class="literal">true</span> <span class="comment"># Returns text links as proper links inlined with the paragraph.</span></span><br><span class="line">    <span class="comment">## OR</span></span><br><span class="line"><span class="attr">linkify:</span> <span class="literal">false</span> <span class="comment"># Returns text links as text.</span></span><br></pre></td></tr></table></figure>
+<h5 id="typographer">typographer</h5>
+<p>这样可以替代常见的排版元素，例如©，弯引号，破折号等。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">typographer:</span> <span class="literal">true</span> <span class="comment"># Substitution of common typographical elements will take place.</span></span><br><span class="line">    <span class="comment">## OR</span></span><br><span class="line"><span class="attr">typographer:</span> <span class="literal">false</span> <span class="comment"># No substitution, so dumb quotes will remain dumb quotes, etc.</span></span><br></pre></td></tr></table></figure>
+<h5 id="quotes">quotes</h5>
+<p>如果将typographer设置为<code>true</code>，则定义用于替换dumb quotes的双引号和单引号。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span> <span class="comment"># &quot;double&quot; will be turned into “single”</span></span><br><span class="line">               <span class="comment"># &#x27;single&#x27; will be turned into ‘single’</span></span><br><span class="line">    <span class="comment">## OR</span></span><br><span class="line"><span class="attr">quotes:</span> <span class="string">&#x27;«»“”&#x27;</span> <span class="comment"># &quot;double&quot; will be turned into «single»</span></span><br><span class="line">               <span class="comment"># &#x27;single&#x27; will be turned into “single”</span></span><br></pre></td></tr></table></figure>
+<h5 id="配置示例">配置示例</h5>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br></pre></td></tr></table></figure>
+<h4 id="自动标题ID">自动标题ID</h4>
+<p>使您能够自动为标题创建ID，以便您可以链接回它们。由于有效的html文档不能包含两个具有相同ID的元素，因此将对照已给定的其他ID来检查添加的每个标题ID。<br>
+如果已经提供了<code>title</code>ID，则会将后续ID更改为<code>title-v2</code>，<code>title-v3</code>等。<br>
+<code>v</code>是默认的collisionSuffix，您可以更改。<br>
+像这样在全局<code>_config.yml</code>中启用它们：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="comment"># Minimum level for ID creation. (Ex. h2 to h6)</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="comment"># A suffix that is prepended to the number given if the ID is repeated.</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;&#x27;</span>           </span><br><span class="line">    <span class="comment"># If `true`, creates an anchor tag with a permalink besides the heading.</span></span><br><span class="line">    <span class="attr">permalink:</span> <span class="literal">false</span>              </span><br><span class="line">    <span class="comment"># Class used for the permalink anchor tag.</span></span><br><span class="line">    <span class="attr">permalinkClass:</span> <span class="string">header-anchor</span> </span><br><span class="line">    <span class="comment"># The symbol used to make the permalink</span></span><br><span class="line">    <span class="attr">permalinkSymbol:</span> <span class="string">¶</span></span><br><span class="line">    <span class="comment"># Transform anchor to (1) lower case; (2) upper case</span></span><br><span class="line">    <span class="attr">case:</span> <span class="number">0</span></span><br><span class="line">    <span class="comment"># Replace space with a character</span></span><br><span class="line">    <span class="attr">separator:</span> <span class="string">&#x27;-&#x27;</span></span><br></pre></td></tr></table></figure>
+<h4 id="插件">插件</h4>
+<p>可用插件</p>
+<ul>
+<li>markdown-it-abbr</li>
+<li>markdown-it-footnote</li>
+<li>markdown-it-ins</li>
+<li>markdown-it-sub</li>
+<li>markdown-it-sup<br>
+这些可以在全局<code>_config.yml</code>中启用，如下所示：</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-abbr</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-footnote</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-ins</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sub</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sup</span></span><br></pre></td></tr></table></figure>
+<h4 id="所有选项配置">所有选项配置</h4>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-abbr</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-footnote</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-ins</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sub</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sup</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;v&#x27;</span></span><br><span class="line">    <span class="attr">permalink:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line">    <span class="attr">permalinkSymbol:</span> <span class="string">¶</span></span><br></pre></td></tr></table></figure>
+<h3 id="测试">测试</h3>
+<p>H<sub>2</sub>O</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-renderer-markdown-it/wiki">参考链接</a></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/hexo/">hexo</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/测试/">测试</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+	<section id="comment" class="comment">
+		<div id="gitment"></div>
+	</section>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'cyd1st',
+			repo: 'HexoBlogTalk',
+			oauth: {
+				client_id: 'd866e388a849fcd4cb60',
+				client_secret: '59689fbeae4d1a4ab8763632cac3e1d43a53280a',
+			},
+		})
+		gitment.render('gitment')
+	</script>
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a></br>
+	<a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022026651号-1</a>
+	
+    </br>
+    
+    &copy; 2022 cyD
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
